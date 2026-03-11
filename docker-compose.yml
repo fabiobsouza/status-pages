@@ -42,10 +42,10 @@ services:
     environment:
       # ── Required ──
       KENER_SECRET_KEY: 8d9c7f2a-2f31-4c3e-9e6c-6e0d0a6b7f3d
-      ORIGIN: http://0.0.0.0:3000 
+      ORIGIN: http://localhost:3000 
       REDIS_URL: redis://redis:6379
 
-      DATABASE_URL: "mysql://lellodb:123456@mysql:3306/kener_db"
+      DATABASE_URL: "mysql://statusdb:123456@mysql:3306/kener_db"
 
     ports:
       - "3000:3000"
@@ -65,7 +65,7 @@ services:
     - "3306:3306"
     container_name: mysql
     environment:
-      MYSQL_USER: "lellodb"
+      MYSQL_USER: "statusdb"
       MYSQL_PASSWORD: "123456"            # use a strong password
       MYSQL_DATABASE: "kener_db"
       MYSQL_RANDOM_ROOT_PASSWORD: "true"
